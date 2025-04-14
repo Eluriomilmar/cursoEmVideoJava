@@ -7,20 +7,20 @@ public class ControleRemoto {
     private boolean tocando;
     private boolean mudo;
 
-    public void setVolume(int mixer){
+    private void setVolume(int mixer){
         this.volume += mixer;
     }
 
-    public int getVolume(){
+    private int getVolume(){
         System.out.println("O volume é igual a " + this.volume + "%");
         return this.volume;
     }
 
-    public void setLigado(boolean estado){
+    private void setLigado(boolean estado){
         this.ligado = estado;
     }
 
-    public void getLigado(){
+    private void getLigado(){
         if (this.ligado){
             System.out.println("O controle está ligado.");
         }else{
@@ -28,11 +28,11 @@ public class ControleRemoto {
         }
     }
 
-    public void setTocando(boolean estado){
+    private void setTocando(boolean estado){
         this.tocando = estado;
     }
 
-    public void getTocando(){
+    private void getTocando(){
         if(this.tocando){
             System.out.println("O dispositivo está tocando.");
         }else{
@@ -72,7 +72,7 @@ public class ControleRemoto {
         }
     }
 
-    public boolean getMudo(){
+    private boolean getMudo(){
         if (this.mudo) {
             System.out.println("O volume está mudo");
             return true;
@@ -82,7 +82,7 @@ public class ControleRemoto {
         }
     }
 
-    public void setMudo(boolean valor){
+    private void setMudo(boolean valor){
         this.mudo = valor;
     }
 
