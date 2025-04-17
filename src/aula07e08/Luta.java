@@ -1,4 +1,4 @@
-package aulas07e08;
+package aula07e08;
 
 import java.util.Random;
 
