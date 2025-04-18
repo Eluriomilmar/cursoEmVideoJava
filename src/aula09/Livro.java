@@ -1,17 +1,17 @@
 package aula09;
 
-public class Livro {
+public class Livro implements Publicacao {
 
     private String titulo;
     private String autor;
     private int totPaginas;
     private int pagAtual;
     private boolean aberto;
-    private String leitor;
+    private Pessoa leitor;
 
-    public Livro(String ti, String au, int tP, int pA, boolean ab, String le) {
+    public Livro(String ti, String au, int tP, int pA, boolean ab, Pessoa le){
         this.titulo = ti;
-        this.autor = au;
+        this. autor = au;
         this.totPaginas = tP;
         this.pagAtual = pA;
         this.aberto = ab;
@@ -29,51 +29,77 @@ public class Livro {
         }
     }
 
-    public String getTitulo() {
+    private String getTitulo() {
         return titulo;
     }
 
-    public String getAutor() {
+    private String getAutor() {
         return autor;
     }
 
-    public int getTotPaginas() {
+    private int getTotPaginas() {
         return totPaginas;
     }
 
-    public int getPagAtual() {
+    private int getPagAtual() {
         return pagAtual;
     }
 
-    public boolean isAberto() {
+    private boolean getAberto() {
         return aberto;
     }
 
-    public String getLeitor() {
-        return leitor;
+    private String getLeitor() {
+        return leitor.getNome();
     }
 
-    public void setTitulo(String ti) {
+    private void setTitulo(String ti) {
         this.titulo = ti;
     }
 
-    public void setAutor(String au) {
+    private void setAutor(String au) {
         this.autor = au;
     }
 
-    public void setTotPaginas(int tP) {
+    private void setTotPaginas(int tP) {
         this.totPaginas = tP;
     }
 
-    public void setPagAtual(int pA) {
+    private void setPagAtual(int pA) {
         this.pagAtual = pA;
     }
 
-    public void setAberto(boolean ab) {
-        this.aberto = ab;
+    private void setLeitor(String le) {
+        this.leitor.setNome(le);
     }
 
-    public void setLeitor(String le) {
-        this.leitor = le;
+    public void abrir() {
+        if (this.aberto) {
+            System.out.println("O livro já está aberto");
+        } else if (!this.aberto) {
+            this.aberto = true;
+            System.out.println("O livro foi aberto!");
+        }
+    }
+
+    public void fechar() {
+        if (!this.aberto) {
+            System.out.println("O livro já está fechado!");
+        } else if (this.aberto) {
+            this.aberto = false;
+            System.out.println("O livro foi fechado!");
+        }
+    }
+    public void folhear() {
+        System.out.println("O livro está na página " + this.getPagAtual());
+    }
+
+    public void avancarPag() {
+        this.pagAtual++;
+        System.out.println("A página avançou para a de número " + this.pagAtual);
+    }
+    public void voltarPag() {
+        this.pagAtual--;
+        System.out.println("A página foi retrocedida para a de número " +this.pagAtual);
     }
 }
