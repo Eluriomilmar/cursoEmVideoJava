@@ -1,4 +1,4 @@
 package aula11;
 
-public class Tecnico {
+public class Tecnico extends aula11.Pessoa {
 }
