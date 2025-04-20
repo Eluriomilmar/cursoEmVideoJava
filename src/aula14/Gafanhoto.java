@@ -12,7 +12,7 @@ public class Gafanhoto extends aula14.Pessoa {
     }
 
     public String getLogin() {
-        return login;
+        return this.login;
     }
 
     public void setLogin(String login) {
@@ -20,7 +20,7 @@ public class Gafanhoto extends aula14.Pessoa {
     }
 
     public int getTotAssistido() {
-        return totAssistido;
+        return this.totAssistido;
     }
 
     public void setTotAssistido(int totAssistido) {

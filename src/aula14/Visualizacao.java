@@ -1,26 +1,25 @@
 package aula14;
 
-public class Visualizacao implements Video, Gafanhoto {
+public class Visualizacao {
     private Gafanhoto espectador;
     private Video filme;
-    public avaliar();
-    public avaliar(float nota);
-    public avaliar(float porcentagem);
+
 
     public Visualizacao(Gafanhoto espectador, Video filme) {
         this.espectador = espectador;
         this.filme = filme;
+        this.espectador.setTotAssistido(this.espectador.getTotAssistido() + 1);
     }
 
-    public avaliar() {
+    public void avaliar() {
         this.filme.setAvaliacao(5);
     }
 
-    public avaliar(float nota) {
+    public void avaliar(int nota) {
         this.filme.setAvaliacao(nota);
     }
 
-    public avaliar(float porcentagem) {
+    public void avaliar(float porcentagem) {
         int total = 0;
         if (porcentagem <= 20) {
             total = 3;
@@ -32,5 +31,21 @@ public class Visualizacao implements Video, Gafanhoto {
             total = 10;
         }
         this.filme.setAvaliacao(total);
+    }
+
+    public Gafanhoto getEspectador() {
+        return espectador;
+    }
+
+    public void setEspectador(Gafanhoto espectador) {
+        this.espectador = espectador;
+    }
+
+    public Video getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Video filme) {
+        this.filme = filme;
     }
 }
