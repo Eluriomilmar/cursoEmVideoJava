@@ -31,8 +31,9 @@ public class Pokemon {
         return vitorias;
     }
 
-    public void setVitorias(int vitorias) {
+    public int setVitorias(int vitorias) {
         this.vitorias = vitorias;
+        return vitorias;
     }
 
     public int getDerrotas() {
